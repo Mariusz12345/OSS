@@ -1,0 +1,20 @@
+package OSS.client.application;
+
+import OSS.client.application.home.HomeModule;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
+import OSS.client.application.presentersamochod.PresenterSamochodModule;
+import OSS.client.application.presentermenyglowne.PresenterMenyGlowneModule;
+import OSS.client.application.presenterserwis.PresenterSerwisModule;
+
+public class ApplicationModule extends AbstractPresenterModule {
+    @Override
+    protected void configure() {
+		install(new PresenterSerwisModule());
+		install(new PresenterMenyGlowneModule());
+		install(new PresenterSamochodModule());
+		install(new HomeModule());
+
+        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
+                ApplicationPresenter.MyProxy.class);
+    }
+}
