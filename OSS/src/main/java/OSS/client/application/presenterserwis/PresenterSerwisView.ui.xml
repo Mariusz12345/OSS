@@ -1,0 +1,13 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+ xmlns:d="urn:import:com.google.gwt.user.datepicker.client"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+              <g:HTMLPanel>
+               <center>Data: <d:DateBox ui:field="biezacaData"/></center> 
+           <center>Pracowniki: <g:ValueListBox ui:field="pracownik" /></center> 
+             <center><g:Button ui:field="dodajUsluge" text="Dodaj usługę" /> <g:Button ui:field="dodajczesci" text="Dodaj cześci"/> </center>
+				<br></br>
+				<br></br>
+             <center><g:Button ui:field="guzik" text="Zatwierdz"/></center>
+             </g:HTMLPanel>
+</ui:UiBinder>
