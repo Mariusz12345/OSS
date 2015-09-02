@@ -68,13 +68,7 @@ class PresenterDodajCzesciView extends ViewImpl implements PresenterDodajCzesciP
 	DataGrid<CzescDTO> dataGrid;
 	
 	public void ustawDataGrid(){
-		 Column<CzescDTO, Boolean> checkColumn = new Column<CzescDTO, Boolean>(
- 		        new CheckboxCell(true, false)) {
- 		      @Override
- 		      public Boolean getValue(CzescDTO object) {
- 		        return false;
- 		      }
- 		    };
+		
 
     	TextColumn<CzescDTO> cenna = new TextColumn<CzescDTO>() {
 
@@ -88,7 +82,6 @@ class PresenterDodajCzesciView extends ViewImpl implements PresenterDodajCzesciP
     	
     	dataGrid.setWidth("500px");
     	dataGrid.setHeight("100px");
-    	dataGrid.addColumn(checkColumn,"");
     	dataGrid.addColumn(cenna,"Cenna czesci");
 	}
 	

@@ -3,6 +3,7 @@
              xmlns:g="urn:import:com.google.gwt.user.client.ui"
               xmlns:c="urn:import:com.google.gwt.user.cellview.client">
              
+             
              <g:HTMLPanel>
              <center><h1>Dodaj usługę</h1></center>
              <hr></hr>
