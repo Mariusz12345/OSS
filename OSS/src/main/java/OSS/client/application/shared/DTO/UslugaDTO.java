@@ -10,6 +10,11 @@ public class UslugaDTO {
 	public UslugaDTO(){
 		
 	}
+	public UslugaDTO(String koszJednostki,String lGodziny){
+		this.koszJednostki = koszJednostki;
+		this.lGodziny=lGodziny;
+	}
+
 	
 	public String getKoszJednostki() {
 		return koszJednostki;

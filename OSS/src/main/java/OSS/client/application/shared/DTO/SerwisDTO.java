@@ -15,9 +15,6 @@ public class SerwisDTO {
 	public SerwisDTO(){
 		
 	}
-
-
-
 	public String getGuzik() {
 		return guzik;
 	}

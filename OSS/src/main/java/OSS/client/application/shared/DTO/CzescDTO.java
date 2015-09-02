@@ -7,6 +7,13 @@ public class CzescDTO {
 	private String anuluj;
 	private String cenna;
 	private Jednostki jednostka;
+	
+	public CzescDTO(){
+		
+	}
+	public CzescDTO(String cenna){
+		this.cenna=cenna;
+	}
 	public String getWykonaj() {
 		return wykonaj;
 	}

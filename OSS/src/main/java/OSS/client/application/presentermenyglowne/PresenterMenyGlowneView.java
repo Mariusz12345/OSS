@@ -44,11 +44,13 @@ class PresenterMenyGlowneView extends ViewWithUiHandlers<PresenterMenyGlowneUiHa
 			
 			if(content!=null){
 				kontener.add(content);
+				
+			}
 			}else{
 				super.setInSlot(slot, content);
 			}
 		}
-	}
+	
 	
 	public void przelacz(){
 		dodajSamochod.addClickHandler(new ClickHandler() {
@@ -65,6 +67,14 @@ class PresenterMenyGlowneView extends ViewWithUiHandlers<PresenterMenyGlowneUiHa
 			public void onClick(ClickEvent event) {
 			
 				PlaceRequest request=new PlaceRequest(NameTokens.serwis);
+				menager.revealPlace(request);
+			}
+		});
+		listaSerwisow.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				PlaceRequest request=new PlaceRequest(NameTokens.listaserwisow);
 				menager.revealPlace(request);
 			}
 		});

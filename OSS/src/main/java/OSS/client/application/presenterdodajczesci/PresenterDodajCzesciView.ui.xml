@@ -1,10 +1,12 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+              xmlns:c="urn:import:com.google.gwt.user.cellview.client">
              <g:HTMLPanel>
              
              <center><h1>Dodaj cześci</h1></center>
              <hr></hr>
+            <center><c:DataGrid ui:field="dataGrid" /></center>
              <center> Cenna: <g:TextBox ui:field="cenna" /> </center>
              <center>Jednostki: <g:ValueListBox ui:field="jednostka" /></center>
              <center><g:Button ui:field="wykonaj" text="Wykonaj" /> <g:Button ui:field="anuluj" text="Anuluj" /></center>

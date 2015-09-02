@@ -20,6 +20,7 @@
 		<hr></hr>
 		<br></br>
 		<br></br>
+		<div id="example5"></div>
 		<g:Button ui:field="dodajSamochod" text="Dodaj Samochod" />
 		<br></br>
 		<br></br>
@@ -27,7 +28,6 @@
 		<br></br>
 		<br></br>
 		<g:Button ui:field="listaSerwisow" text="Lista Serwisow " />
-		<div id="example5"></div>
 		<g:HTMLPanel ui:field="kontener"/>
 	</g:HTMLPanel>
 </ui:UiBinder>

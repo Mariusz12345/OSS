@@ -3,6 +3,7 @@
  xmlns:d="urn:import:com.google.gwt.user.datepicker.client"
              xmlns:g="urn:import:com.google.gwt.user.client.ui">
               <g:HTMLPanel>
+              <center><h1>Dodaj Serwis</h1></center>
                <center>Data: <d:DateBox ui:field="biezacaData"/></center> 
            <center>Pracowniki: <g:ValueListBox ui:field="pracownik" /></center> 
              <center><g:Button ui:field="dodajUsluge" text="Dodaj usługę" /> <g:Button ui:field="dodajczesci" text="Dodaj cześci"/> </center>

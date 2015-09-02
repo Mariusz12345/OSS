@@ -26,7 +26,10 @@ class PresenterSamochodView extends ViewWithUiHandlers<PresenterSamochodUiHandle
     }
     
     private static PresenterSamochodUiBinder uiBinder = GWT.create(PresenterSamochodUiBinder.class);
+    interface Driver extends SimpleBeanEditorDriver<SamochodDTO,PresenterSamochodView>{
+    }
     
+    PlaceManager menager;
     @UiField
     TextBox marka;
     @UiField
@@ -41,13 +44,12 @@ class PresenterSamochodView extends ViewWithUiHandlers<PresenterSamochodUiHandle
 	}
 
 	@Inject
-    PresenterSamochodView() {
+    PresenterSamochodView(PlaceManager menager) {
         initWidget(uiBinder.createAndBindUi(this));
+        this.menager=menager;
     }
    
-    interface Driver extends SimpleBeanEditorDriver<SamochodDTO,PresenterSamochodView>{
-    }
-    
+   
     Driver driver = GWT.create(Driver.class);
     
     public void zatwierdz(){
@@ -55,9 +57,10 @@ class PresenterSamochodView extends ViewWithUiHandlers<PresenterSamochodUiHandle
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				
 				wczytaj();
 				ustaw();
+				PlaceRequest request=new PlaceRequest(NameTokens.glowne);
+				menager.revealPlace(request);
 			}
 		});
     }

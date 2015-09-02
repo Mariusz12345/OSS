@@ -1,6 +1,8 @@
 package OSS.client.place;
 
 public class NameTokens {
+	public static final String listaserwisow = "listaserwisow";
+
 	public static final String czesc = "czesc";
 
 	public static final String usluga = "usluga";
@@ -11,7 +13,7 @@ public class NameTokens {
 
 	public static final String samochod = "samochod";
 
-	public static final String home = "!home";
+	public static final String home = "home";
 
 	public static String getHome() {
 		return home;
@@ -35,6 +37,10 @@ public class NameTokens {
 
 	public static String getCzesc() {
 		return czesc;
+	}
+
+	public static String getListaserwisow() {
+		return listaserwisow;
 	}
 
 }

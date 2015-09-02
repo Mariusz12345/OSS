@@ -1,18 +1,15 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+              xmlns:c="urn:import:com.google.gwt.user.cellview.client">
              
              <g:HTMLPanel>
-             
              <center><h1>Dodaj usługę</h1></center>
              <hr></hr>
-             
              <br></br>
              <br></br>
              <br></br>
-             <center> Koszt jednostkowy: <g:TextBox ui:field="koszJednostki" />   </center>
-             <center>Liczba godzin: <g:TextBox ui:field="lGodziny" text="Liczba Godzin"/></center>
-             
+              <center> <c:DataGrid ui:field="listaUslug"/></center>
              <center><g:Button ui:field="wykonaj"  text="Wykonaj"/> <g:Button ui:field="anuluj" text="Anuluj" /></center>
              </g:HTMLPanel>
              
