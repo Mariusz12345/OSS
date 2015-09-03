@@ -44,6 +44,9 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
         initWidget(uiBinder.createAndBindUi(this));
         this.menager=menager;
     }
+    PresenterDodajUslugeView(){
+    	
+    }
 
     @UiField
     Button wykonaj;
@@ -119,14 +122,15 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
 		});
     	
     }
-    public UslugaDTO wczytaj(){
+    public  void wczytaj(){
     	UslugaDTO usluga = driver.flush();
     	Window.alert("test: "+usluga.getKoszJednostki()+usluga.getlGodziny());
-    	return usluga;
     }
     public void ustaw(){
-    	driver.initialize(this);
-    	driver.edit(new UslugaDTO());
+    	UslugaDTO p = new UslugaDTO();
+    	PresenterDodajUslugeView editor = new PresenterDodajUslugeView();
+		driver.initialize(editor);
+		driver.edit(p);
     }
     
 }

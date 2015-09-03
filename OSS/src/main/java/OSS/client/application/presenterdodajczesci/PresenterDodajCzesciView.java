@@ -37,12 +37,14 @@ class PresenterDodajCzesciView extends ViewImpl implements PresenterDodajCzesciP
     interface Driver extends SimpleBeanEditorDriver<CzescDTO, PresenterDodajCzesciView> {
     }
     PlaceManager menager;
+    Driver driver = GWT.create(Driver.class);
     @Inject
     PresenterDodajCzesciView(PresenterDodajCzesciBinder uiBinder,PlaceManager menager) {
         initWidget(uiBinder.createAndBindUi(this));
         this.menager=menager;
     }
-	Driver driver = GWT.create(Driver.class);
+    PresenterDodajCzesciView(){
+    }
 	
 	
     @UiField
@@ -78,8 +80,6 @@ class PresenterDodajCzesciView extends ViewImpl implements PresenterDodajCzesciP
 				return cenna.getCenna();
 			}
     	};
-    
-    	
     	dataGrid.setWidth("500px");
     	dataGrid.setHeight("100px");
     	dataGrid.addColumn(cenna,"Cenna czesci");
@@ -90,8 +90,6 @@ class PresenterDodajCzesciView extends ViewImpl implements PresenterDodajCzesciP
 			
 			@Override
 			public void onClick(ClickEvent event) {
-			wczytaj();
-			ustaw();
 			PlaceRequest placeRequest=new PlaceRequest(NameTokens.serwis);
 			menager.revealPlace(placeRequest);
 			}
@@ -115,14 +113,6 @@ class PresenterDodajCzesciView extends ViewImpl implements PresenterDodajCzesciP
 		jednostka.setAcceptableValues(Arrays.asList(Jednostki.values()));
 		jednostka.setValue(Jednostki.Kilogramy, true);
 	}
-	public CzescDTO wczytaj(){
-		CzescDTO czesc = driver.flush();
-		Window.alert("Test: " + czesc.getCenna()+czesc.getJednostka());
-		return czesc;
-	}
-	public void ustaw(){
-		driver.initialize(this);
-		driver.edit(new CzescDTO());
-	}
+
 	
 }

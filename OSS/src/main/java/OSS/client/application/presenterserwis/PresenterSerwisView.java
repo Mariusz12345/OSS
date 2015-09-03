@@ -44,15 +44,15 @@ class PresenterSerwisView extends ViewImpl implements PresenterSerwisPresenter.M
 
 	}
 	PlaceManager menager;
-
+	Driver driver = GWT.create(Driver.class);
 	@Inject
 	PresenterSerwisView(PresenterSerwisUiBinder uiBinder,PlaceManager menager) {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.menager=menager;
 	}
-
-	Driver driver = GWT.create(Driver.class);
-	
+	PresenterSerwisView(){
+		
+	}
 	@UiField
 	Button guzik;
 	@UiField
@@ -61,7 +61,6 @@ class PresenterSerwisView extends ViewImpl implements PresenterSerwisPresenter.M
 	Button dodajczesci;
 	@UiField
 	DateBox  biezacaData;
-
 	
 	// Struktura robienia ValueListBox skopiowane ze strony http://c.gwt-examples.com/home/ui/valuelistboxeditor 
 	@UiField(provided = true)
@@ -129,9 +128,11 @@ class PresenterSerwisView extends ViewImpl implements PresenterSerwisPresenter.M
 		pracownik.setValue(Pracownik.Kowalczyk, true);
 	}
 	public void ustaw() {
+		//SerwisDTO p =new SerwisDTO();
+		//PresenterSerwisView editor = new PresenterSerwisView();
+		//driver.initialize(editor);
+		//driver.edit(p);
 		driver.initialize(this);
-		//Ustawianie wartosci value list box
 		driver.edit(new SerwisDTO());
 	}
-
 }

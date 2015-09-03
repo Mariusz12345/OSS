@@ -79,8 +79,4 @@ class PresenterMenyGlowneView extends ViewWithUiHandlers<PresenterMenyGlowneUiHa
 			}
 		});
 	}
-	
-	
-	
-
 }

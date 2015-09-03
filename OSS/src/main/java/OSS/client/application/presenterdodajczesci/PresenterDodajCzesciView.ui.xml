@@ -6,24 +6,29 @@
 	#wycentrowanie {
 		text-align: center;
 	}
-	#center {
-   width: 200px;
-   margin: 0 auto;
-}
+	#wycentrowanieLayoutu{
+				width: 550px;
+				margin: 0 auto;
+
+					}
+	
 	</ui:style>
-
 	<g:HTMLPanel>
-
-		
 		<div id="wycentrowanie">
 		<h1>Dodaj cześci</h1>
 		</div>
 		<hr></hr>
-			<center><c:DataGrid ui:field="dataGrid" /></center>
-			<center>Cenna:<g:TextBox ui:field="cenna" /></center>
-			<center>Jednostki:<g:ValueListBox ui:field="jednostka" /></center>
-			<center><g:Button ui:field="wykonaj" text="Wykonaj" /></center>
-			<center><g:Button ui:field="anuluj" text="Anuluj" /></center>
-		
+			<div id="wycentrowanieLayoutu">
+			<c:DataGrid ui:field="dataGrid" />
+			</div>			
+			<div id="wycentrowanie">
+			Cenna:<g:TextBox ui:field="cenna" />
+			</div>
+			<div id = "wycentrowanie">
+			Jednostki:<g:ValueListBox ui:field="jednostka" />
+			</div>
+			<div id="wycentrowanie">
+			<g:Button ui:field="wykonaj" text="Wykonaj" /><g:Button ui:field="anuluj" text="Anuluj" />
+			</div>
 	</g:HTMLPanel>
 </ui:UiBinder>

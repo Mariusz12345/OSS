@@ -14,7 +14,6 @@ import OSS.client.place.NameTokens;
 public class PresenterDodajCzesciPresenter extends Presenter<PresenterDodajCzesciPresenter.MyView, PresenterDodajCzesciPresenter.MyProxy>  {
     interface MyView extends View  {
     	public void ustawValueListBox();
-    	public void ustaw();
     	public void wykonaj();
     	public void anuluj();
     	public void ustawDataGrid();
@@ -33,8 +32,6 @@ public class PresenterDodajCzesciPresenter extends Presenter<PresenterDodajCzesc
             MyView view, 
             MyProxy proxy) {
         super(eventBus, view, proxy, RevealType.Root);
-        getView().ustawValueListBox();
-        getView().ustaw();
     }
     
     protected void onBind() {

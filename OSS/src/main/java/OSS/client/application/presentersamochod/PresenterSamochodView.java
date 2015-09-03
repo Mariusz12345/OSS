@@ -48,6 +48,9 @@ class PresenterSamochodView extends ViewWithUiHandlers<PresenterSamochodUiHandle
         initWidget(uiBinder.createAndBindUi(this));
         this.menager=menager;
     }
+	PresenterSamochodView(){
+		
+	}
    
    
     Driver driver = GWT.create(Driver.class);
@@ -71,6 +74,10 @@ class PresenterSamochodView extends ViewWithUiHandlers<PresenterSamochodUiHandle
     }
     
     public void ustaw(){
+    	//SamochodDTO p = new SamochodDTO();
+    	//PresenterSamochodView editor = new PresenterSamochodView();
+    	//driver.initialize(editor);
+    	//driver.edit(p);
     	driver.initialize(this);
     	driver.edit(new SamochodDTO());
     }

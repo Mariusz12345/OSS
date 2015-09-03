@@ -2,13 +2,33 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
  xmlns:d="urn:import:com.google.gwt.user.datepicker.client"
              xmlns:g="urn:import:com.google.gwt.user.client.ui">
+              
+              <ui:style>
+	
+	 	 #wycentrowanie {
+			text-align: center;
+			}
+	
+              
+              </ui:style>
+              
               <g:HTMLPanel>
-              <center><h1>Dodaj Serwis</h1></center>
-               <center>Data: <d:DateBox ui:field="biezacaData"/></center> 
-           <center>Pracowniki: <g:ValueListBox ui:field="pracownik" /></center> 
-             <center><g:Button ui:field="dodajUsluge" text="Dodaj usługę" /> <g:Button ui:field="dodajczesci" text="Dodaj cześci"/> </center>
+              <div id="wycentrowanie">
+              <h1>Dodaj Serwis</h1>
+              </div>
+           	  <div id="wycentrowanie">   
+              Data: <d:DateBox ui:field="biezacaData"/> 
+              </div>
+             <div id="wycentrowanie"> 
+           Pracowniki: <g:ValueListBox ui:field="pracownik" /> 
+             </div>
+            <div id="wycentrowanie"> 
+             <g:Button ui:field="dodajUsluge" text="Dodaj usługę" /> <g:Button ui:field="dodajczesci" text="Dodaj cześci"/>
+			</div>
 				<br></br>
 				<br></br>
-             <center><g:Button ui:field="guzik" text="Zatwierdz"/></center>
+             <div id="wycentrowanie">
+             <g:Button ui:field="guzik" text="Zatwierdz"/>
+             </div>
              </g:HTMLPanel>
 </ui:UiBinder>

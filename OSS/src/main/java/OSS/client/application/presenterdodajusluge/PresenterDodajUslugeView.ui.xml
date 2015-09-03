@@ -3,15 +3,31 @@
              xmlns:g="urn:import:com.google.gwt.user.client.ui"
               xmlns:c="urn:import:com.google.gwt.user.cellview.client">
              
-             
+             <ui:style>
+             #wycentrowanie {
+				text-align: center;
+					}
+					#wycentrowanieLayoutu{
+				width: 550px;
+				margin: 0 auto;
+
+					}
+             </ui:style>
              <g:HTMLPanel>
-             <center><h1>Dodaj usługę</h1></center>
+             <div id="wycentrowanie">
+             <h1>Dodaj usługę</h1>
+             </div>
              <hr></hr>
              <br></br>
              <br></br>
              <br></br>
-              <center> <c:DataGrid ui:field="listaUslug"/></center>
-             <center><g:Button ui:field="wykonaj"  text="Wykonaj"/> <g:Button ui:field="anuluj" text="Anuluj" /></center>
+              <div id="wycentrowanieLayoutu"> 
+              <c:DataGrid ui:field="listaUslug"/>
+              </div>
+             <div id ="wycentrowanie">
+             <g:Button ui:field="wykonaj"  text="Wykonaj"/> <g:Button ui:field="anuluj" text="Anuluj" />
+             </div>
+             
              </g:HTMLPanel>
              
 </ui:UiBinder>
