@@ -7,10 +7,9 @@
              #wycentrowanie {
 				text-align: center;
 					}
-					#wycentrowanieLayoutu{
+			#wycentrowanieLayoutu{
 				width: 550px;
 				margin: 0 auto;
-
 					}
              </ui:style>
              <g:HTMLPanel>
@@ -19,15 +18,12 @@
              </div>
              <hr></hr>
              <br></br>
-             <br></br>
-             <br></br>
               <div id="wycentrowanieLayoutu"> 
               <c:DataGrid ui:field="listaUslug"/>
               </div>
              <div id ="wycentrowanie">
-             <g:Button ui:field="wykonaj"  text="Wykonaj"/> <g:Button ui:field="anuluj" text="Anuluj" />
+             <g:Button ui:field="wykonaj"  text="Wykonaj"/> <g:Button ui:field="anuluj" text="Anuluj"  />
              </div>
-             
              </g:HTMLPanel>
              
 </ui:UiBinder>

@@ -28,6 +28,9 @@
 		<br></br>
 		<br></br>
 		<g:Button ui:field="listaSerwisow" text="Lista Serwisow " />
+		<br></br>
+		<br></br>
+		<g:Button ui:field="stworzNowaUsluge" text="Stworz nową usługę"/>
 		<g:HTMLPanel ui:field="kontener"/>
 	</g:HTMLPanel>
 </ui:UiBinder>

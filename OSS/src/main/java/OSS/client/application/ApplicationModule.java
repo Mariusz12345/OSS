@@ -7,10 +7,12 @@ import OSS.client.application.presentermenyglowne.PresenterMenyGlowneModule;
 import OSS.client.application.presenterserwis.PresenterSerwisModule;
 import OSS.client.application.presenterdodajusluge.PresenterDodajUslugeModule;
 import OSS.client.application.presenterdodajczesci.PresenterDodajCzesciModule;
+import OSS.client.application.presenterstworznowausluge.PresenterStworzNowaUslugeModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
+		install(new PresenterStworzNowaUslugeModule());
 		install(new PresenterDodajCzesciModule());
 		install(new PresenterDodajUslugeModule());
 		install(new PresenterSerwisModule());

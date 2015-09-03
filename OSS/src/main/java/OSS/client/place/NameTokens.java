@@ -1,6 +1,8 @@
 package OSS.client.place;
 
 public class NameTokens {
+	public static final String stworzUsluge = "stworzUsluge";
+
 	public static final String listaserwisow = "listaserwisow";
 
 	public static final String czesc = "czesc";
@@ -41,6 +43,10 @@ public class NameTokens {
 
 	public static String getListaserwisow() {
 		return listaserwisow;
+	}
+
+	public static String getStworzUsluge() {
+		return stworzUsluge;
 	}
 
 }

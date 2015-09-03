@@ -1,0 +1,32 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+             
+             <ui:style>
+             
+              #wycentrowanie {
+				text-align: center;
+					}
+					#wycentrowanieLayoutu{
+				width: 130px;
+				margin: 0 auto;
+					}
+             
+             </ui:style>
+             <g:HTMLPanel>
+			 <div id="wycentrowanie">             
+             <h1>Stworz nowa usługę</h1>
+             </div>
+             <hr></hr>
+   			 <br></br>
+   			 <div id="wycentrowanie">
+   			 Podaj koszt jednostki: <g:TextBox ui:field="kosztJednostki" />
+   			 Podaj liczbe godzin:   <g:TextBox ui:field="liczbaGodzin"/>
+             </div>
+             <div id="wycentrowanieLayoutu">
+             <br></br>
+             <br></br>
+             <g:Button ui:field="zapisz" text="Zapisz"/> <g:Button ui:field="anuluj" text="Anuluj"/>
+           	 </div>
+             </g:HTMLPanel>
+</ui:UiBinder>

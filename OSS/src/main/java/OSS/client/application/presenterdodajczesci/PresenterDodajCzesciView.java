@@ -46,7 +46,6 @@ class PresenterDodajCzesciView extends ViewImpl implements PresenterDodajCzesciP
     PresenterDodajCzesciView(){
     }
 	
-	
     @UiField
     Button wykonaj;
 	@UiField

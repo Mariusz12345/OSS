@@ -47,15 +47,12 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     PresenterDodajUslugeView(){
     	
     }
-
     @UiField
     Button wykonaj;
     @UiField
     Button anuluj;
-
     @UiField
     DataGrid<UslugaDTO> listaUslug;
-    
     public void ustawDaneWDataGrid(){
     	 Column<UslugaDTO, Boolean> checkColumn = new Column<UslugaDTO, Boolean>(
     		        new CheckboxCell(true, false)) {
@@ -64,8 +61,6 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     		        return false;
     		      }
     		    };
-    		  
-    	
     	TextColumn<UslugaDTO> kosztJednostkowy = new TextColumn<UslugaDTO>() {
 
 			@Override
@@ -89,7 +84,6 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     	listaUslug.addColumn(liczbaGodzin,"Liczba Godzin");
     	
     }
-    
     public void wartosci(){
     	List<UslugaDTO> listaUslugg = new ArrayList<>();
     	listaUslugg.add(new UslugaDTO("200","20h"));
@@ -120,7 +114,6 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
 				menager.revealPlace(request);
 			}
 		});
-    	
     }
     public  void wczytaj(){
     	UslugaDTO usluga = driver.flush();

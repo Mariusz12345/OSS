@@ -28,6 +28,8 @@ class PresenterMenyGlowneView extends ViewWithUiHandlers<PresenterMenyGlowneUiHa
 	@UiField
 	Button listaSerwisow;
 	@UiField
+	Button stworzNowaUsluge;
+	@UiField
 	HTMLPanel kontener;
 	
 	PlaceManager menager;
@@ -75,6 +77,14 @@ class PresenterMenyGlowneView extends ViewWithUiHandlers<PresenterMenyGlowneUiHa
 			@Override
 			public void onClick(ClickEvent event) {
 				PlaceRequest request=new PlaceRequest(NameTokens.listaserwisow);
+				menager.revealPlace(request);
+			}
+		});
+		stworzNowaUsluge.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				PlaceRequest request = new PlaceRequest(NameTokens.stworzUsluge);
 				menager.revealPlace(request);
 			}
 		});
