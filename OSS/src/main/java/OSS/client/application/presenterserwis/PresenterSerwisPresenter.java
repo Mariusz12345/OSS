@@ -1,7 +1,5 @@
 package OSS.client.application.presenterserwis;
 
-import java.text.ParseException;
-
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;

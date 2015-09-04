@@ -32,6 +32,7 @@ public class PresenterMenyGlownePresenter extends Presenter<PresenterMenyGlowneP
             MyView view, 
             MyProxy proxy) {
         super(eventBus, view, proxy, RevealType.Root);
+       
         
         getView().setUiHandlers(this);
     }

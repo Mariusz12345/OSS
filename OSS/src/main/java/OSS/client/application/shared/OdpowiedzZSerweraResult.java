@@ -18,5 +18,4 @@ public class OdpowiedzZSerweraResult implements Result {
 		super();
 		this.odpowiedziZSerwera = odpowiedziZSerwera;
 	}
-	
 }

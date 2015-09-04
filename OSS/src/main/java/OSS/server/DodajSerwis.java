@@ -24,7 +24,7 @@ public class DodajSerwis {
 	@Column(name="liczbaGodzin")
 	private Float liczbaGodzin;
 
-	
+
 
 	public Float getKosztJednostki() {
 		return kosztJednostki;

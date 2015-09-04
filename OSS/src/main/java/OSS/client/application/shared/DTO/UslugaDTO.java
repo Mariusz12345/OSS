@@ -7,15 +7,13 @@ public class UslugaDTO {
 	private String anuluj;
 	private String lGodziny;
 	
+	
 	public UslugaDTO(){
-		
 	}
 	public UslugaDTO(String koszJednostki,String lGodziny){
 		this.koszJednostki = koszJednostki;
 		this.lGodziny=lGodziny;
 	}
-
-	
 	public String getKoszJednostki() {
 		return koszJednostki;
 	}

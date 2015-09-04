@@ -1,6 +1,7 @@
 package OSS.client.application.presenterdodajusluge;
 
 import com.google.gwt.event.shared.GwtEvent.Type;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
@@ -44,6 +45,13 @@ public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslug
         this.dispacher=dispacher;
         
     }
+   
+    @Override
+    public void prepareFromRequest(PlaceRequest request) {
+    	super.prepareFromRequest(request);
+    	wartosci1=request.getParameter("name", "wartosc1");
+    	wartosci2=request.getParameter("name2", "wartosci2");
+    }
     @Override
     protected void onBind() {
     	super.onBind();
@@ -51,12 +59,6 @@ public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslug
     	getView().anuluj();
     	getView().ustawDaneWDataGrid();
     	getView().wartosci();
-    }
-    @Override
-    public void prepareFromRequest(PlaceRequest request) {
-    	super.prepareFromRequest(request);
-    	wartosci1=request.getParameter("name", "wartosc1");
-    	wartosci2=request.getParameter("name2", "wartosci2");
     }
     
     

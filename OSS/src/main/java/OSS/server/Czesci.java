@@ -53,5 +53,4 @@ public class Czesci {
 		this.cenna = cenna;
 		this.jednostki = jednostki;
 	}
-	
 }

@@ -5,15 +5,15 @@
 
 	<groupId>OSS</groupId>
 	<artifactId>OSS</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.5</version>
 	<packaging>war</packaging>
 	<name>GWTP Basic</name>
 	<description>Basic GWTP application</description>
 
 	<properties>
 		<!-- client -->
-		<gwt.version>2.6.0</gwt.version>
-		<gwtp.version>1.2.1</gwtp.version>
+		<gwt.version>2.7.0</gwt.version>
+		<gwtp.version>1.5</gwtp.version>
 		<gin.version>2.1.2</gin.version>
 
 		<!-- server -->
@@ -21,7 +21,7 @@
 
 		<!-- testing -->
 		<junit.version>4.11</junit.version>
-		<jukito.version>1.4</jukito.version>
+		<jukito.version>1.4.1</jukito.version>
 
 		<!-- maven -->
 		<gwt-maven-plugin.version>2.5.1</gwt-maven-plugin.version>
@@ -104,10 +104,8 @@
 	</build>
 
 	<dependencies>
-		<!-- hibernate i jpa -->
-
-
-		<dependency>
+	
+			<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>1.0.1.Final</version>
@@ -117,12 +115,24 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.0.0.CR4</version>
 		</dependency>
-
 		<!-- Google Web Toolkit -->
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
 			<version>${gwt.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-rest</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-rest-shared</artifactId>
+			<version>1.4</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- GWT-Platform -->

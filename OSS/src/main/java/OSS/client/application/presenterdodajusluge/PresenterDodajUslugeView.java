@@ -43,6 +43,7 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     PresenterDodajUslugeView(PresenterDodajUslugeBinder uiBinder,PlaceManager menager) {
         initWidget(uiBinder.createAndBindUi(this));
         this.menager=menager;
+        
     }
     PresenterDodajUslugeView(){
     	
