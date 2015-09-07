@@ -1,6 +1,7 @@
 package OSS.client.application.presenterdodajusluge;
 
 import com.google.gwt.event.shared.GwtEvent.Type;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -14,6 +15,8 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
+import OSS.client.application.shared.OdpowiedzZSerweraResult;
+import OSS.client.application.shared.WyslijDoSerweraAction;
 import OSS.client.place.NameTokens;
 public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslugePresenter.MyView, PresenterDodajUslugePresenter.MyProxy>  {
     interface MyView extends View  {
@@ -22,9 +25,8 @@ public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslug
     	public void anuluj();
     	 public void ustawDaneWDataGrid();
     	 public void wartosci();
+    	 //void setOdpowiedziZSerwera(String serverOdpowiedz);
     }
-    private String wartosci1="";
-    private String wartosci2="";
     @ContentSlot
     public static final Type<RevealContentHandler<?>> SLOT_PresenterDodajUsluge = new Type<RevealContentHandler<?>>();
     private DispatchAsync dispacher;
@@ -38,19 +40,11 @@ public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslug
     PresenterDodajUslugePresenter(
             EventBus eventBus,
             MyView view, 
-            MyProxy proxy,
-            DispatchAsync dispacher) {
+            MyProxy proxy,DispatchAsync dispacher) {
         super(eventBus, view, proxy, RevealType.Root);
         getView().ustaw();
         this.dispacher=dispacher;
         
-    }
-   
-    @Override
-    public void prepareFromRequest(PlaceRequest request) {
-    	super.prepareFromRequest(request);
-    	wartosci1=request.getParameter("name", "wartosc1");
-    	wartosci2=request.getParameter("name2", "wartosci2");
     }
     @Override
     protected void onBind() {
@@ -60,6 +54,20 @@ public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslug
     	getView().ustawDaneWDataGrid();
     	getView().wartosci();
     }
-    
-    
+    //@Override
+//    protected void onReset() {
+//    	getView().setOdpowiedziZSerwera("poczeka");
+//    	dispacher.execute(new WyslijDoSerweraAction(), new AsyncCallback<OdpowiedzZSerweraResult>() {
+//
+//			@Override
+//			public void onFailure(Throwable caught) {
+//				getView().setOdpowiedziZSerwera("erro"+caught.getMessage());
+//				
+//			}
+//			@Override
+//			public void onSuccess(OdpowiedzZSerweraResult result) {
+//				getView().setOdpowiedziZSerwera(result.getOdpowiedziZSerwera());
+//			}
+//		});
+//    }
 }

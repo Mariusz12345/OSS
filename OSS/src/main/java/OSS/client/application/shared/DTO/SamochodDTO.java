@@ -43,6 +43,7 @@ public class SamochodDTO {
 		this.zatwierdz = zatwierdz;
 	}
 
+
 	public SamochodDTO(String marka, String model, String przebieg, String zatwierdz) {
 		super();
 		this.marka = marka;

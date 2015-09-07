@@ -47,9 +47,4 @@ public class Serwis {
 		this.dataWykonania = dataWykonania;
 		this.pracownik = pracownik;
 	}
-	
-	
-	
-	
-	
 }

@@ -4,12 +4,11 @@ import com.gwtplatform.dispatch.rpc.shared.Result;
 
 public class OdpowiedzZSerweraResult implements Result {
 	
-	private String  odpowiedziZSerwera;
+	private String  odpowiedziZSerwera = "zapisano do bazy danych";
 
 	public String getOdpowiedziZSerwera() {
 		return odpowiedziZSerwera;
 	}
-
 	public void setOdpowiedziZSerwera(String odpowiedziZSerwera) {
 		this.odpowiedziZSerwera = odpowiedziZSerwera;
 	}

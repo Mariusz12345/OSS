@@ -11,6 +11,7 @@ import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.SimpleBeanEditorDriver;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.thirdparty.javascript.rhino.jstype.TemplatizedType;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.Column;
@@ -46,7 +47,6 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
         
     }
     PresenterDodajUslugeView(){
-    	
     }
     @UiField
     Button wykonaj;
@@ -126,5 +126,9 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
 		driver.initialize(editor);
 		driver.edit(p);
     }
+//	@Override
+//	public void setOdpowiedziZSerwera(String serverOdpowiedz) {
+//		this.cos2.setText(serverOdpowiedz);
+//	}
     
 }

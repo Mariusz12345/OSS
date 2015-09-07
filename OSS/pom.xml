@@ -104,6 +104,11 @@
 	</build>
 
 	<dependencies>
+	<dependency>
+	<groupId>com.gwtplatform</groupId>
+	<artifactId>gwtp-dispatch-rpc-client</artifactId>
+	<version>1.5</version>
+</dependency>
 	
 			<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -125,13 +130,13 @@
 		<dependency>
 			<groupId>com.gwtplatform</groupId>
 			<artifactId>gwtp-dispatch-rest</artifactId>
-			<version>1.4</version>
+			<version>1.5</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.gwtplatform</groupId>
 			<artifactId>gwtp-dispatch-rest-shared</artifactId>
-			<version>1.4</version>
+			<version>1.5</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -141,11 +146,7 @@
 			<artifactId>gwtp-mvp-client</artifactId>
 			<version>${gwtp.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.gwtplatform</groupId>
-			<artifactId>gwtp-dispatch-rpc-client</artifactId>
-			<version>${gwtp.version}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>com.gwtplatform</groupId>
 			<artifactId>gwtp-dispatch-rpc-server-guice</artifactId>

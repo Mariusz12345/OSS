@@ -7,7 +7,6 @@ public class UslugaDTO {
 	private String anuluj;
 	private String lGodziny;
 	
-	
 	public UslugaDTO(){
 	}
 	public UslugaDTO(String koszJednostki,String lGodziny){
@@ -44,7 +43,6 @@ public class UslugaDTO {
 	public void setlGodziny(String lGodziny) {
 		this.lGodziny = lGodziny;
 	}
-
 	public UslugaDTO(String koszJednostki, String wykonaj, String anuluj, String lGodziny) {
 		super();
 		this.koszJednostki = koszJednostki;
@@ -52,6 +50,5 @@ public class UslugaDTO {
 		this.anuluj = anuluj;
 		this.lGodziny = lGodziny;
 	}
-	
 	
 }

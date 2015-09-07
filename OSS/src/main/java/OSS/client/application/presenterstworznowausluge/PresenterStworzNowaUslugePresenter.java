@@ -46,7 +46,7 @@ public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStwor
     protected void onBind() {
         super.onBind();
         
-        registerHandler(getView().getZapisz().addClickHandler(new ClickHandler() {
+       registerHandler(getView().getZapisz().addClickHandler(new ClickHandler() {
 			
 			@Override
 			public void onClick(ClickEvent event) {
