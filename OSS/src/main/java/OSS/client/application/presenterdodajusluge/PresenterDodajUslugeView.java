@@ -19,6 +19,7 @@ import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TextBox;
@@ -31,14 +32,15 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import OSS.client.application.presenterdodajczesci.Jednostki;
 import OSS.client.application.shared.DTO.UslugaDTO;
 import OSS.client.place.NameTokens;
+import OSS.server.DodajSerwis;
 
-class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugePresenter.MyView,Editor<UslugaDTO> {
+class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugePresenter.MyView {
     interface PresenterDodajUslugeBinder extends UiBinder<Widget, PresenterDodajUslugeView> {
     }
-    interface Driver extends SimpleBeanEditorDriver<UslugaDTO, PresenterDodajUslugeView> {
-
-	}
-    Driver driver = GWT.create(Driver.class);
+//    interface Driver extends SimpleBeanEditorDriver<UslugaDTO, PresenterDodajUslugeView> {
+//
+//	}
+   // Driver driver = GWT.create(Driver.class);
     PlaceManager menager;
     @Inject
     PresenterDodajUslugeView(PresenterDodajUslugeBinder uiBinder,PlaceManager menager) {
@@ -48,6 +50,7 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     }
     PresenterDodajUslugeView(){
     }
+    @UiField HTML odpowiedzSerwera;
     @UiField
     Button wykonaj;
     @UiField
@@ -99,8 +102,8 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				wczytaj();
-				ustaw();
+				//wczytaj();
+				//ustaw();
 				PlaceRequest request=new PlaceRequest(NameTokens.serwis);
 				menager.revealPlace(request);
 			}
@@ -116,19 +119,21 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
 			}
 		});
     }
-    public  void wczytaj(){
-    	UslugaDTO usluga = driver.flush();
-    	Window.alert("test: "+usluga.getKoszJednostki()+usluga.getlGodziny());
-    }
-    public void ustaw(){
-    	UslugaDTO p = new UslugaDTO();
-    	PresenterDodajUslugeView editor = new PresenterDodajUslugeView();
-		driver.initialize(editor);
-		driver.edit(p);
-    }
-//	@Override
-//	public void setOdpowiedziZSerwera(String serverOdpowiedz) {
-//		this.cos2.setText(serverOdpowiedz);
-//	}
+//    public  void wczytaj(){
+//    	UslugaDTO usluga = driver.flush();
+//    	Window.alert("test: "+usluga.getKoszJednostki()+usluga.getlGodziny());
+//    }
+//    public void ustaw(){
+//    	UslugaDTO p = new UslugaDTO();
+//    	PresenterDodajUslugeView editor = new PresenterDodajUslugeView();
+//		driver.initialize(editor);
+//		driver.edit(p);
+//    }
+
+    
+	@Override
+	public void setOdpowiedziZSerwera(String serverOdpowiedz) {
+		this.odpowiedzSerwera.setText(serverOdpowiedz);
+	}
     
 }

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import OSS.client.application.shared.DTO.UslugaDTO;
+
 @Entity
 @Table(name="usluga",schema="oss")
 public class Usluga {

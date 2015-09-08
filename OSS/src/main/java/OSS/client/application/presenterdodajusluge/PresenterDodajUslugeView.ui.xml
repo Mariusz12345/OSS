@@ -24,6 +24,7 @@
              <div id ="wycentrowanie">
              <g:Button ui:field="wykonaj"  text="Wykonaj"/> <g:Button ui:field="anuluj" text="Anuluj"  />
              </div>
+             <g:HTML ui:field="odpowiedzSerwera" />
              </g:HTMLPanel>
              
 </ui:UiBinder>
