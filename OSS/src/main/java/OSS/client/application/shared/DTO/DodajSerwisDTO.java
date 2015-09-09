@@ -32,6 +32,9 @@ public class DodajSerwisDTO implements Serializable {
 		this.kosztJednostki = kosztJednostki;
 		this.liczbaGodzin = liczbaGodzin;
 	}
+	public DodajSerwisDTO(){
+		
+	}
 	public DodajSerwis dodajSerwisNaSztywno(){
 		return new DodajSerwis(this.id_dodajSerwis,this.kosztJednostki,this.liczbaGodzin);
 	}

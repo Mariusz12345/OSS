@@ -2,6 +2,7 @@ package OSS.client.application.presenterdodajusluge;
 
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.ProvidesResize;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -45,7 +46,6 @@ public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslug
         super(eventBus, view, proxy, RevealType.Root);
         //getView().ustaw();
         this.dispacher=dispacher;
-        
     }
     @Override
     protected void onBind() {

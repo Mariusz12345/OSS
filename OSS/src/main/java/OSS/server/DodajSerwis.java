@@ -57,5 +57,8 @@ public class DodajSerwis implements Serializable {
 		this.kosztJednostki = kosztJednostki;
 		this.liczbaGodzin = liczbaGodzin;
 	}
+	public DodajSerwis(){
+		
+	}
 	
 }
