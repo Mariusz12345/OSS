@@ -1,9 +1,6 @@
 package OSS.client.application.serwer.handler;
 
 
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.EJBException;
 import javax.inject.Provider;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -32,23 +29,13 @@ public class PobierzUslugeHandler implements ActionHandler<WyslijDoSerweraAction
 	}
 	@Override
 	public OdpowiedzZSerweraResult execute(WyslijDoSerweraAction action	, ExecutionContext execution) throws ActionException {
-//		String wyjscie = action.getSerwis();
-//		String serverInfo = servletContex.getServerInfo();
-//		String userAgent = requestServlet.get().getHeader("User-Agent");
-//		return new OdpowiedzZSerweraResult("Witaj! Twoja wiadomosci wyslana do nas to: " + wyjscie
-//				+ "!<br><br>I am running " + serverInfo + ".<br><br>It looks like you are using:<br>" + userAgent);
-//		
 		try{
+			
 			Wywolaj service = null;
-			DodajSerwis serwis = new DodajSerwis(1l, 15, 24);
-//
-//		    //service.doAction(action.getSerwisDTO().dodajSerwisNaSztywno());
-			//InitialContext ctx = new InitialContext();
-			//Bean bean = (Bean) ctx.lookup("java:/OSS/src/main/java/OSS/client/application/serwer/handler/Bean");
-			//Bean bean = new Bean();
-			   service = (Wywolaj) new InitialContext().lookup("java:app/OSS-1.5/CallerName!OSS.client.application.serwer.handler.Wywolaj");
-			   service.dodaj3(serwis);
-			//bean.dodaj1(serwis);
+			DodajSerwis serwis = new DodajSerwis("999","11111");
+			 
+			service = (Wywolaj) new InitialContext().lookup("java:app/OSS-1.5/CallerName!OSS.client.application.serwer.handler.Wywolaj");
+			service.dodaj3(serwis);
 			
 		} catch (NamingException e) {
 		
@@ -64,7 +51,6 @@ public class PobierzUslugeHandler implements ActionHandler<WyslijDoSerweraAction
 	@Override
 	public void undo(WyslijDoSerweraAction arg0, OdpowiedzZSerweraResult arg1, ExecutionContext arg2)
 			throws ActionException {
-		// TODO Auto-generated method stub
 	}
 
 }

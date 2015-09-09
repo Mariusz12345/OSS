@@ -11,7 +11,7 @@
 
     <!-- Other module inherits -->
     <inherits name='com.gwtplatform.dispatch.Dispatch' />
-    
+    <set-property name="user.agent" value="gecko1_8"/>
     <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 
     <source path='client' />

@@ -23,10 +23,10 @@ public class DodajSerwis implements Serializable {
 	private Long id_dodajSerwis;
 	
 	@Column(name="koszt_Jednostki")
-	private double kosztJednostki;
+	private String kosztJednostki;
 	
 	@Column(name="liczbaGodzin")
-	private double liczbaGodzin;
+	private String liczbaGodzin;
 
 	public Long getId_dodajSerwis() {
 		return id_dodajSerwis;
@@ -35,25 +35,31 @@ public class DodajSerwis implements Serializable {
 	public void setId_dodajSerwis(Long id_dodajSerwis) {
 		this.id_dodajSerwis = id_dodajSerwis;
 	}
-	
-	public double getKosztJednostki() {
+
+	public String getKosztJednostki() {
 		return kosztJednostki;
 	}
 
-	public void setKosztJednostki(double kosztJednostki) {
+	public void setKosztJednostki(String kosztJednostki) {
 		this.kosztJednostki = kosztJednostki;
 	}
 
-	public double getLiczbaGodzin() {
+	public String getLiczbaGodzin() {
 		return liczbaGodzin;
 	}
 
-	public void setLiczbaGodzin(double liczbaGodzin) {
+	public void setLiczbaGodzin(String liczbaGodzin) {
 		this.liczbaGodzin = liczbaGodzin;
 	}
-	public DodajSerwis(Long id_dodajSerwis, double kosztJednostki, double liczbaGodzin) {
+
+	public DodajSerwis(Long id_dodajSerwis, String kosztJednostki, String liczbaGodzin) {
 		super();
 		this.id_dodajSerwis = id_dodajSerwis;
+		this.kosztJednostki = kosztJednostki;
+		this.liczbaGodzin = liczbaGodzin;
+	}
+	public DodajSerwis(String kosztJednostki, String liczbaGodzin) {
+		super();
 		this.kosztJednostki = kosztJednostki;
 		this.liczbaGodzin = liczbaGodzin;
 	}

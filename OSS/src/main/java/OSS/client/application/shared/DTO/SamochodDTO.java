@@ -51,5 +51,6 @@ public class SamochodDTO {
 		this.przebieg = przebieg;
 		this.zatwierdz = zatwierdz;
 	}
+	
 
 }

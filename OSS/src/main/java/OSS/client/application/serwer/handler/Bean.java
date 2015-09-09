@@ -20,10 +20,10 @@ public class Bean implements Wywolaj   {
 		entityManager.merge(dodajSerwis);
 	}
 	
-	public void dodaj2(String text){
-		DodajSerwis serwis = new DodajSerwis(1l, 15, 24);
-		entityManager.persist(serwis);
-	}
+//	public void dodaj2(String text){
+//		DodajSerwis serwis = new DodajSerwis(1l, 15, 24);
+//		entityManager.persist(serwis);
+//	}
 
 	@Override
 	public void dodaj3(DodajSerwis dodajSerwis) {

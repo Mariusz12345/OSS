@@ -55,11 +55,7 @@ public class PresenterDodajUslugePresenter extends Presenter<PresenterDodajUslug
     	getView().ustawDaneWDataGrid();
     	getView().wartosci();
     }
-	@Override
-	public void prepareFromRequest(PlaceRequest request) {
-		super.prepareFromRequest(request);
-		name = request.getParameter("name", "wartosci Domyslan");
-	}
+
    
     @Override
    protected void onReset() {

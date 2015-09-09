@@ -1,5 +1,7 @@
 package OSS.client.application.shared.DTO;
 
+import OSS.server.DodajSerwis;
+
 public class UslugaDTO {
 	
 	private String koszJednostki;

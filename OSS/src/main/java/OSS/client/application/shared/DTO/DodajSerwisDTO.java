@@ -6,27 +6,34 @@ import OSS.server.DodajSerwis;
 
 public class DodajSerwisDTO implements Serializable {
 	private Long id_dodajSerwis;
-	private double kosztJednostki;
-	private double liczbaGodzin;
+	private String kosztJednostki;
+	private String liczbaGodzin;
+	
 	public Long getId_dodajSerwis() {
 		return id_dodajSerwis;
 	}
 	public void setId_dodajSerwis(Long id_dodajSerwis) {
 		this.id_dodajSerwis = id_dodajSerwis;
 	}
-	public double getKosztJednostki() {
+	public String getKosztJednostki() {
 		return kosztJednostki;
 	}
-	public void setKosztJednostki(double kosztJednostki) {
+	public void setKosztJednostki(String kosztJednostki) {
 		this.kosztJednostki = kosztJednostki;
 	}
-	public double getLiczbaGodzin() {
+	public String getLiczbaGodzin() {
 		return liczbaGodzin;
 	}
-	public void setLiczbaGodzin(double liczbaGodzin) {
+	public void setLiczbaGodzin(String liczbaGodzin) {
 		this.liczbaGodzin = liczbaGodzin;
 	}
-	public DodajSerwisDTO(Long id_dodajSerwis, double kosztJednostki, double liczbaGodzin) {
+	public DodajSerwisDTO(String kosztJednostki ,String liczbaGodzin){
+		super();
+		this.kosztJednostki=kosztJednostki;
+		this.liczbaGodzin=liczbaGodzin;
+	}
+	
+	public DodajSerwisDTO(Long id_dodajSerwis, String kosztJednostki, String liczbaGodzin) {
 		super();
 		this.id_dodajSerwis = id_dodajSerwis;
 		this.kosztJednostki = kosztJednostki;
@@ -35,7 +42,8 @@ public class DodajSerwisDTO implements Serializable {
 	public DodajSerwisDTO(){
 		
 	}
-	public DodajSerwis dodajSerwisNaSztywno(){
-		return new DodajSerwis(this.id_dodajSerwis,this.kosztJednostki,this.liczbaGodzin);
-	}
+	
+//	public DodajSerwis dodajSerwisNaSztywno(){
+//		return new DodajSerwis(this.id_dodajSerwis,this.kosztJednostki,this.liczbaGodzin);
+//	}
 }

@@ -7,12 +7,11 @@ import OSS.server.DodajSerwis;
 
 public class WyslijDoSerweraAction extends UnsecuredActionImpl<OdpowiedzZSerweraResult>  {
 
-	//private DodajSerwisDTO serwisDTO ;
+	private DodajSerwisDTO serwisek ;
 	private String serwis ;
 	public WyslijDoSerweraAction(){
 		
 	}
-	
 	public WyslijDoSerweraAction(String name) {
 		super();
 		this.serwis = name;
@@ -21,12 +20,18 @@ public class WyslijDoSerweraAction extends UnsecuredActionImpl<OdpowiedzZSerwera
 	public String getSerwis() {
 		return serwis;
 	}
-
+	public DodajSerwisDTO getSerwisek() {
+		return serwisek;
+	}
+	public void setSerwisek(DodajSerwisDTO serwisek) {
+		this.serwisek = serwisek;
+	}
 	public void setSerwis(String serwis) {
 		this.serwis = serwis;
 	}
-	//public DodajSerwisDTO getSerwisDTO() {
-		//return new DodajSerwisDTO(1l, 15, 20);
-	//}
+	
+
+	
+
 	
 }

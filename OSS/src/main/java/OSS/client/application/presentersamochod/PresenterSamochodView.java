@@ -2,6 +2,7 @@ package OSS.client.application.presentersamochod;
 
 import javax.inject.Inject;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Window;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.SimpleBeanEditorDriver;

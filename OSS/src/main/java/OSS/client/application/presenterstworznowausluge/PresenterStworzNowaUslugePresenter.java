@@ -21,9 +21,8 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import OSS.client.place.NameTokens;
 public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStworzNowaUslugePresenter.MyView, PresenterStworzNowaUslugePresenter.MyProxy>  {
     interface MyView extends View  {
-    	public Button getZapisz();
-    	public TextBox getKosztJednostki();
-    	public TextBox getLiczbaGodzin();
+    	public void ustaw();
+    	public void zatwierdz();
     }
     @ContentSlot
     public static final Type<RevealContentHandler<?>> SLOT_PresenterStworzNowaUsluge = new Type<RevealContentHandler<?>>();
@@ -41,25 +40,32 @@ public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStwor
            ) {
         super(eventBus, view, proxy, RevealType.Root);
         this.menager=menager;
+        getView().ustaw();
+    }
+    @Override
+    protected void onBind() {
+    	getView().ustaw();
+    	getView().zatwierdz();
+    	super.onBind();
     }
     
-    protected void onBind() {
-        super.onBind();
-        
-       registerHandler(getView().getZapisz().addClickHandler(new ClickHandler() {
-			
-			@Override
-			public void onClick(ClickEvent event) {
-				wyslijDaneNaSerwer();
-			}
-
-		}));
-    }
-
-	private void wyslijDaneNaSerwer() {
-		PlaceRequest request = new PlaceRequest.Builder().nameToken(NameTokens.usluga).build().with("name", getView().getKosztJednostki().getText()).with("name2", getView().getLiczbaGodzin().getText());
-		menager.revealPlace(request);
-		
-	}
+//    protected void onBind() {
+//        super.onBind();
+//        
+//       registerHandler(getView().getZapisz().addClickHandler(new ClickHandler() {
+//			
+//			@Override
+//			public void onClick(ClickEvent event) {
+//				wyslijDaneNaSerwer();
+//			}
+//
+//		}));
+//    }
+//
+//	private void wyslijDaneNaSerwer() {
+//		PlaceRequest request = new PlaceRequest.Builder().nameToken(NameTokens.usluga).build().with("name", getView().getKosztJednostki().getText()).with("name2", getView().getLiczbaGodzin().getText());
+//		menager.revealPlace(request);
+//		
+//	}
     
 }
