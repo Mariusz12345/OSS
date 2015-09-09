@@ -43,12 +43,12 @@ public class PobierzUslugeHandler implements ActionHandler<WyslijDoSerweraAction
 			DodajSerwis serwis = new DodajSerwis(1l, 15, 24);
 //
 //		    //service.doAction(action.getSerwisDTO().dodajSerwisNaSztywno());
-			InitialContext ctx = new InitialContext();
-			Bean bean = (Bean) ctx.lookup("java:/OSS/src/main/java/OSS/client/application/serwer/handler/Bean");
+			//InitialContext ctx = new InitialContext();
+			//Bean bean = (Bean) ctx.lookup("java:/OSS/src/main/java/OSS/client/application/serwer/handler/Bean");
 			//Bean bean = new Bean();
-			   //service = (Wywolaj) new InitialContext().lookup("java:global/OSS-1.5/CallerName!caller.Wywolaj");
-			  // service.dodaj3(serwis);
-			bean.dodaj1(serwis);
+			   service = (Wywolaj) new InitialContext().lookup("java:app/OSS-1.5/CallerName!OSS.client.application.serwer.handler.Wywolaj");
+			   service.dodaj3(serwis);
+			//bean.dodaj1(serwis);
 			
 		} catch (NamingException e) {
 		
