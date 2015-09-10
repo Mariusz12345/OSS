@@ -27,6 +27,7 @@
              <br></br>
              <br></br>
              <g:Button ui:field="zapisz" text="Zapisz"/> <g:Button ui:field="anuluj" text="Anuluj"/>
+           	 
            	 </div>
              </g:HTMLPanel>
 </ui:UiBinder>

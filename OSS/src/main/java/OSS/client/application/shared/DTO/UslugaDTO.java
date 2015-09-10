@@ -1,6 +1,5 @@
 package OSS.client.application.shared.DTO;
 
-import OSS.server.DodajSerwis;
 
 public class UslugaDTO {
 	
@@ -8,7 +7,14 @@ public class UslugaDTO {
 	private String wykonaj;
 	private String anuluj;
 	private String lGodziny;
-	
+	private String odczyt;
+
+	public String getOdczyt() {
+		return odczyt;
+	}
+	public void setOdczyt(String odczyt) {
+		this.odczyt = odczyt;
+	}
 	public UslugaDTO(){
 	}
 	public UslugaDTO(String koszJednostki,String lGodziny){
@@ -45,12 +51,12 @@ public class UslugaDTO {
 	public void setlGodziny(String lGodziny) {
 		this.lGodziny = lGodziny;
 	}
-	public UslugaDTO(String koszJednostki, String wykonaj, String anuluj, String lGodziny) {
+	public UslugaDTO(String koszJednostki, String wykonaj, String anuluj, String lGodziny, String odczyt) {
 		super();
 		this.koszJednostki = koszJednostki;
 		this.wykonaj = wykonaj;
 		this.anuluj = anuluj;
 		this.lGodziny = lGodziny;
+		this.odczyt = odczyt;
 	}
-	
 }

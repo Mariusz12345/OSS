@@ -34,13 +34,13 @@ import OSS.client.application.shared.DTO.UslugaDTO;
 import OSS.client.place.NameTokens;
 import OSS.server.DodajSerwis;
 
-class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugePresenter.MyView {
+class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugePresenter.MyView,Editor<UslugaDTO> {
     interface PresenterDodajUslugeBinder extends UiBinder<Widget, PresenterDodajUslugeView> {
     }
-//    interface Driver extends SimpleBeanEditorDriver<UslugaDTO, PresenterDodajUslugeView> {
-//
-//	}
-   // Driver driver = GWT.create(Driver.class);
+    interface Driver extends SimpleBeanEditorDriver<UslugaDTO, PresenterDodajUslugeView> {
+
+	}
+    Driver driver = GWT.create(Driver.class);
     PlaceManager menager;
     @Inject
     PresenterDodajUslugeView(PresenterDodajUslugeBinder uiBinder,PlaceManager menager) {
@@ -50,7 +50,8 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     }
     PresenterDodajUslugeView(){
     }
-    @UiField HTML odpowiedzSerwera;
+    @UiField
+    TextBox odczyt;
     @UiField
     Button wykonaj;
     @UiField
@@ -86,7 +87,6 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     	listaUslug.addColumn(checkColumn,"");
     	listaUslug.addColumn(kosztJednostkowy,"Koszt Jednostkowy");
     	listaUslug.addColumn(liczbaGodzin,"Liczba Godzin");
-    	
     }
     public void wartosci(){
     	List<UslugaDTO> listaUslugg = new ArrayList<>();
@@ -95,7 +95,6 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
     	listaUslugg.add(new UslugaDTO("100","10h"));
     	listaUslugg.add(new UslugaDTO("50","5h"));
     	listaUslug.setRowData(listaUslugg);
-    	
     }
     public void zatwierdz(){
     	wykonaj.addClickHandler(new ClickHandler() {
@@ -119,6 +118,9 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
 			}
 		});
     }
+    public void wypisZBazy(String wypis){
+    	this.odczyt.setText(wypis);
+    }
 //    public  void wczytaj(){
 //    	UslugaDTO usluga = driver.flush();
 //    	Window.alert("test: "+usluga.getKoszJednostki()+usluga.getlGodziny());
@@ -131,9 +133,5 @@ class PresenterDodajUslugeView extends ViewImpl implements PresenterDodajUslugeP
 //    }
    
     
-	@Override
-	public void setOdpowiedziZSerwera(String serverOdpowiedz) {
-		this.odpowiedzSerwera.setText(serverOdpowiedz);
-	}
     
 }

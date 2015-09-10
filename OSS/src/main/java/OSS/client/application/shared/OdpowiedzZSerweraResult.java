@@ -6,7 +6,6 @@ public class OdpowiedzZSerweraResult implements Result {
 	
 	private String  odpowiedziZSerwera ;
 
-
 	public OdpowiedzZSerweraResult(String odpowiedziZSerwera) {
 		super();
 		this.odpowiedziZSerwera = odpowiedziZSerwera;

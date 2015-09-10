@@ -15,30 +15,32 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 import OSS.client.application.shared.DTO.DodajSerwisDTO;
 import OSS.client.application.shared.DTO.SerwisDTO;
+import OSS.client.place.NameTokens;
 
 class PresenterStworzNowaUslugeView extends ViewImpl
-		implements PresenterStworzNowaUslugePresenter.MyView,Editor<DodajSerwisDTO> {
+		implements PresenterStworzNowaUslugePresenter.MyView, Editor<DodajSerwisDTO> {
 	interface Binder extends UiBinder<Widget, PresenterStworzNowaUslugeView> {
 	}
-	
-	interface Driver extends SimpleBeanEditorDriver<DodajSerwisDTO,PresenterStworzNowaUslugeView>{
-		
-	}
-	
-	Driver driver = GWT.create(Driver.class);
-	 private static Binder uiBinder = GWT.create(Binder.class);
+
+	// interface Driver extends
+	// SimpleBeanEditorDriver<DodajSerwisDTO,PresenterStworzNowaUslugeView>{
+	//
+	// }
+	//
+	// Driver driver = GWT.create(Driver.class);
+	private static Binder uiBinder = GWT.create(Binder.class);
 	PlaceManager menager;
-	PresenterStworzNowaUslugeView(PlaceManager menager){
-		this.menager=menager;
-	}
-	
+
 	@Inject
-	PresenterStworzNowaUslugeView() {
+	PresenterStworzNowaUslugeView(PlaceManager menager) {
 		initWidget(uiBinder.createAndBindUi(this));
+		this.menager = menager;
 	}
+
 	@UiField
 	TextBox kosztJednostki;
 	@UiField
@@ -47,27 +49,44 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 	Button zapisz;
 	@UiField
 	Button anuluj;
-	
-	public void zatwierdz(){
-		zapisz.addClickHandler(new ClickHandler() {
-			
+
+	public Button getZapisz() {
+		return zapisz;
+	}
+
+	public TextBox getLiczbaGodzin() {
+		return liczbaGodzin;
+	}
+
+	public TextBox getKosztJednostki() {
+		return kosztJednostki;
+	}
+
+	public void zatwierdz() {
+		anuluj.addClickHandler(new ClickHandler() {
+
 			@Override
 			public void onClick(ClickEvent event) {
-			
-				wczytaj();
-				ustaw();
-				
+				PlaceRequest request = new PlaceRequest(NameTokens.glowne);
+				menager.revealPlace(request);
 			}
 		});
 	}
-	
-	public void wczytaj(){
-		DodajSerwisDTO serwis = driver.flush();
-		com.google.gwt.user.client.Window.alert("wypis:" + serwis.getKosztJednostki()+serwis.getLiczbaGodzin());
-	}
-	public void ustaw(){
 
-		driver.initialize(this);
-		driver.edit(new DodajSerwisDTO());
+	@Override
+	public void setOdpowiedziZSerwera(String serverOdpowiedz) {
+		com.google.gwt.user.client.Window.alert(serverOdpowiedz);
 	}
+
+	// public void wczytaj(){
+	// DodajSerwisDTO serwis = driver.flush();
+	// com.google.gwt.user.client.Window.alert("wypis:" +
+	// serwis.getKosztJednostki()+serwis.getLiczbaGodzin());
+	// }
+	// public void ustaw(){
+	//
+	// driver.initialize(this);
+	// driver.edit(new DodajSerwisDTO());
+	// }
+
 }
