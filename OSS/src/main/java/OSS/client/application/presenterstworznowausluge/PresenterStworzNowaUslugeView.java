@@ -25,13 +25,11 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 		implements PresenterStworzNowaUslugePresenter.MyView, Editor<DodajSerwisDTO> {
 	interface Binder extends UiBinder<Widget, PresenterStworzNowaUslugeView> {
 	}
-
-	// interface Driver extends
-	// SimpleBeanEditorDriver<DodajSerwisDTO,PresenterStworzNowaUslugeView>{
-	//
-	// }
-	//
-	// Driver driver = GWT.create(Driver.class);
+	interface Driver extends
+	SimpleBeanEditorDriver<DodajSerwisDTO,PresenterStworzNowaUslugeView>{
+	
+	 }
+	Driver driver = GWT.create(Driver.class);
 	private static Binder uiBinder = GWT.create(Binder.class);
 	PlaceManager menager;
 
@@ -53,15 +51,6 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 	public Button getZapisz() {
 		return zapisz;
 	}
-
-	public TextBox getLiczbaGodzin() {
-		return liczbaGodzin;
-	}
-
-	public TextBox getKosztJednostki() {
-		return kosztJednostki;
-	}
-
 	public void zatwierdz() {
 		anuluj.addClickHandler(new ClickHandler() {
 
@@ -69,24 +58,24 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 			public void onClick(ClickEvent event) {
 				PlaceRequest request = new PlaceRequest(NameTokens.glowne);
 				menager.revealPlace(request);
+				com.google.gwt.user.client.Window.alert("wypis"+wczytaj().getKosztJednostki()+wczytaj().getLiczbaGodzin());
+				ustaw();
 			}
 		});
 	}
-
 	@Override
 	public void setOdpowiedziZSerwera(String serverOdpowiedz) {
 		com.google.gwt.user.client.Window.alert(serverOdpowiedz);
 	}
-
-	// public void wczytaj(){
-	// DodajSerwisDTO serwis = driver.flush();
-	// com.google.gwt.user.client.Window.alert("wypis:" +
-	// serwis.getKosztJednostki()+serwis.getLiczbaGodzin());
-	// }
-	// public void ustaw(){
-	//
-	// driver.initialize(this);
-	// driver.edit(new DodajSerwisDTO());
-	// }
-
+	 
+	public DodajSerwisDTO wczytaj(){
+	 
+     DodajSerwisDTO serwis = driver.flush();
+	 return serwis;
+	 
+	 }
+	 public void ustaw(){
+	 driver.initialize(this);
+	 driver.edit(new DodajSerwisDTO());
+	 }
 }

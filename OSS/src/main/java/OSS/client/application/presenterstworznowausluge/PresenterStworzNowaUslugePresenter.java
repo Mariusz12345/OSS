@@ -18,28 +18,26 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
-
 import OSS.client.application.shared.OdpowiedzZSerweraResult;
 import OSS.client.application.shared.WyslijDoSerweraAction;
+import OSS.client.application.shared.DTO.DodajSerwisDTO;
 import OSS.client.place.NameTokens;
 public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStworzNowaUslugePresenter.MyView, PresenterStworzNowaUslugePresenter.MyProxy>  {
     interface MyView extends View  {
-    	//public void ustaw();
-    	public TextBox getKosztJednostki();
+    	public void ustaw();
     	public void setOdpowiedziZSerwera(String serverOdpowiedz);
     	public Button getZapisz();
-    	public TextBox getLiczbaGodzin();
     	public void zatwierdz();
+    	 public DodajSerwisDTO wczytaj();
     }
     @ContentSlot
     public static final Type<RevealContentHandler<?>> SLOT_PresenterStworzNowaUsluge = new Type<RevealContentHandler<?>>();
     private DispatchAsync dispacher;
+    
     @NameToken(NameTokens.stworzUsluge)
     @ProxyStandard
     interface MyProxy extends ProxyPlace<PresenterStworzNowaUslugePresenter> {
     }
-    
-    
     PlaceManager menager;
     @Inject
     PresenterStworzNowaUslugePresenter(
@@ -50,11 +48,11 @@ public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStwor
         super(eventBus, view, proxy, RevealType.Root);
         this.menager=menager;
         this.dispacher=dispacher;
-        //getView().ustaw();
+        getView().ustaw();
     }
     @Override
     protected void onBind() {
-    	//getView().ustaw();
+    	getView().ustaw();
     	getView().zatwierdz();
     	super.onBind();
     }
@@ -63,8 +61,8 @@ public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStwor
     	getView().getZapisz().addClickHandler(new ClickHandler() {
 			
 			@Override
-			public void onClick(ClickEvent event) {
-		    	dispacher.execute(new WyslijDoSerweraAction(getView().getKosztJednostki().getText(),getView().getLiczbaGodzin().getText()), new AsyncCallback<OdpowiedzZSerweraResult>() {
+			public void onClick(ClickEvent event){
+		    	dispacher.execute(new WyslijDoSerweraAction(getView().wczytaj().getKosztJednostki(),getView().wczytaj().getLiczbaGodzin()), new AsyncCallback<OdpowiedzZSerweraResult>() {
 					@Override
 					public void onFailure(Throwable caught) {
 						getView().setOdpowiedziZSerwera("erro"+caught.getMessage());
@@ -73,9 +71,9 @@ public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStwor
 					public void onSuccess(OdpowiedzZSerweraResult result) {
 						getView().setOdpowiedziZSerwera(result.getOdpowiedziZSerwera());
 					}
+				
+					
 				});
-			getView().getKosztJednostki().setText(null);	
-			getView().getLiczbaGodzin().setText(null);
 			}
 		});
     }

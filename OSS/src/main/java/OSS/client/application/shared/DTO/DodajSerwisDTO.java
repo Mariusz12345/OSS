@@ -42,7 +42,12 @@ public class DodajSerwisDTO implements Serializable {
 	public DodajSerwisDTO(){
 		
 	}
+	@Override
+	public String toString() {
+		return "DodajSerwisDTO [kosztJednostki=" + kosztJednostki + ", liczbaGodzin=" + liczbaGodzin + "]";
+	}
 	
+
 //	public DodajSerwis dodajSerwisNaSztywno(){
 //		return new DodajSerwis(this.id_dodajSerwis,this.kosztJednostki,this.liczbaGodzin);
 //	}
