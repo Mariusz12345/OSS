@@ -3,6 +3,7 @@ package OSS.client.application.serwer.handler;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.xml.crypto.Data;
 
 import com.google.gwt.dev.protobuf.Service;
 import com.google.inject.Inject;
@@ -24,10 +25,11 @@ public class PobierzUslugeHandler implements ActionHandler<WyslijDoSerweraAction
 			Wywolaj service = null;
 			service = (Wywolaj) new InitialContext().lookup("java:app/OSS-1.5/CallerName!OSS.client.application.serwer.handler.Wywolaj");
 			service.dodaj4(action.getWart1(),action.getWart2());
-			
+			service.wczytaj();
 		} catch (NamingException e) {
 		}
-		return new OdpowiedzZSerweraResult("Zapisano");
+		
+		return new OdpowiedzZSerweraResult("zapisano");
 	}
 	@Override
 	public Class<WyslijDoSerweraAction> getActionType() {

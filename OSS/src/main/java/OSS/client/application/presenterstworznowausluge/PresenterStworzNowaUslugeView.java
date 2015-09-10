@@ -38,7 +38,8 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 		initWidget(uiBinder.createAndBindUi(this));
 		this.menager = menager;
 	}
-
+	PresenterStworzNowaUslugeView(){
+	}
 	@UiField
 	TextBox kosztJednostki;
 	@UiField
@@ -47,7 +48,6 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 	Button zapisz;
 	@UiField
 	Button anuluj;
-
 	public Button getZapisz() {
 		return zapisz;
 	}
@@ -58,7 +58,7 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 			public void onClick(ClickEvent event) {
 				PlaceRequest request = new PlaceRequest(NameTokens.glowne);
 				menager.revealPlace(request);
-				com.google.gwt.user.client.Window.alert("wypis"+wczytaj().getKosztJednostki()+wczytaj().getLiczbaGodzin());
+				com.google.gwt.user.client.Window.alert("wypis test: "+wczytaj().getKosztJednostki()+"  "+wczytaj().getLiczbaGodzin());
 				ustaw();
 			}
 		});
@@ -69,12 +69,14 @@ class PresenterStworzNowaUslugeView extends ViewImpl
 	}
 	 
 	public DodajSerwisDTO wczytaj(){
-	 
      DodajSerwisDTO serwis = driver.flush();
 	 return serwis;
-	 
 	 }
 	 public void ustaw(){
+		 //DodajSerwisDTO serwisDTO = new DodajSerwisDTO(null,null);
+		 //PresenterStworzNowaUslugeView editor = new PresenterStworzNowaUslugeView();
+		 //driver.initialize(editor);
+		 //driver.edit(serwisDTO);
 	 driver.initialize(this);
 	 driver.edit(new DodajSerwisDTO());
 	 }

@@ -71,8 +71,6 @@ public class PresenterStworzNowaUslugePresenter extends Presenter<PresenterStwor
 					public void onSuccess(OdpowiedzZSerweraResult result) {
 						getView().setOdpowiedziZSerwera(result.getOdpowiedziZSerwera());
 					}
-				
-					
 				});
 			}
 		});
